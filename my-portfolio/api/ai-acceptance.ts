@@ -5,7 +5,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-export async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -33,6 +33,9 @@ export async function handler(req: VercelRequest, res: VercelResponse) {
     const criteria = completion.choices?.[0]?.message?.content || '';
     return res.status(200).json({ criteria });
   } catch (err: any) {
-    return res.status(500).json({ error: 'Failed to call OpenAI', details: err?.message || String(err) });
+    return res.status(500).json({
+      error: 'Failed to call OpenAI',
+      details: err?.message || String(err),
+    });
   }
 }
