@@ -1,29 +1,36 @@
 
 
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
 
 const projects = [
   {
-    title: "E2E Automation Framework",
-    description: "A scalable, maintainable E2E test framework using Cypress and Playwright for a large SaaS platform.",
-    link: "#"
+    title: "This Portfolio!",
+    description:
+      "A modern, responsive personal portfolio built with Vite + React, featuring clean UI components and CI/CD deployment via Vercel.",
+    link: "https://github.com/aaron-southey/portfolio",
   },
   {
-    title: "CI/CD Quality Gates",
-    description: "Integrated automated tests into CI/CD pipelines with Cypress Cloud and GitHub Actions.",
-    link: "#"
+    title: "Cypress TypeScript Framework",
+    description:
+      "A scalable, maintainable E2E testing framework using Cypress and TypeScript, designed for robust and scalable test automation.",
+    link: "https://github.com/aaron-southey/cypress-typescript",
   },
   {
-    title: "Component Library QA",
-    description: "Developed reusable test utilities and patterns for a React component library using Jest and Playwright.",
-    link: "#"
-  }
+    title: "Test Data Generation Utilities",
+    description:
+      "Reusable test utilities and data generation patterns, designed to be ingested by a node package manager for easy integration into projects.",
+    link: "https://github.com/aaron-southey/test-utils",
+  },
+{
+  title: "*In Progress* Playwright C# Framework",
+  description: "A cross-browser automated testing framework using Playwright with C#, integrated into CI/CD pipelines for scalable test execution.",
+  link: "https://github.com/aaron-southey/playwright-csharp",
+}
+
 ];
 
 
 const Projects = () => {
-  const { toast } = useToast();
   return (
     <main className="flex flex-col items-center justify-center min-h-[60vh]">
       <div className="grid gap-6 w-full max-w-4xl md:grid-cols-2">
@@ -37,10 +44,7 @@ const Projects = () => {
               <button
                 type="button"
                 className="ml-auto px-4 py-2 rounded-md bg-primary text-primary-foreground font-semibold shadow hover:bg-primary/90 transition-colors"
-                onClick={() => toast({
-                  title: "Warning!",
-                  description: "Chris Hansen is on his way",
-                })}
+                onClick={() => window.open(project.link, "_blank")}
               >
                 View Project
               </button>

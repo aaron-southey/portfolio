@@ -16,9 +16,9 @@ const About = () => {
       <Card className="w-full max-w-2xl">
         <CardHeader className="flex flex-col items-center">
           <img
-            src="https://avatars.dicebear.com/api/initials/AS.svg"
+            src="/CF755E9F-7F0A-4DCE-BCDC-0A711B951C9B.jpg"
             alt="Profile placeholder"
-            className="w-24 h-24 rounded-full mb-4 border-2 border-primary object-cover bg-muted"
+            className="w-40 h-40 rounded-full mb-4 border-2 border-primary object-cover bg-muted"
             draggable={false}
           />
           <CardTitle className="text-2xl md:text-3xl font-bold">About Me</CardTitle>
