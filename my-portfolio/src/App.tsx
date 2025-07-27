@@ -10,12 +10,14 @@ import { useState } from "react";
 import { Menu } from "lucide-react";
 
 
+
 import TestPlayground from './pages/test-playground';
 import Home from './pages/home';
 import About from './pages/about';
 import Contact from './pages/contact';
 import Projects from './pages/projects';
 import Skills from './pages/skills';
+import { Toaster } from '@/components/ui/toaster';
 
 function App() {
   const location = useLocation();
@@ -33,7 +35,7 @@ function App() {
       {/* Professional header with site title and navigation */}
       <header className="w-full bg-background border-b border-border shadow-sm mb-8">
         <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
-          <span className="text-xl font-bold tracking-tight text-primary select-none">Aaron Southey</span>
+          <span className="text-xl font-bold tracking-tight text-primary select-none">Aaron Southey | Quality Engineer</span>
           {/* Desktop navigation */}
           <nav className="hidden md:block">
             <NavigationMenu className="w-auto">
@@ -99,6 +101,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/test-playground" element={<TestPlayground />} />
       </Routes>
+      <Toaster />
     </>
   );
 }
