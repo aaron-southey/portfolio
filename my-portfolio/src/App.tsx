@@ -9,14 +9,13 @@ import {
 import { useState } from "react";
 import { Menu } from "lucide-react";
 
-
-
-import TestPlayground from './pages/test-playground';
 import Home from './pages/home';
 import About from './pages/about';
 import Contact from './pages/contact';
 import Projects from './pages/projects';
 import Skills from './pages/skills';
+import QABestPractices from './pages/qa-best-practices';
+import QATestUtilities from './pages/qa-test-utilities';
 import { Toaster } from '@/components/ui/toaster';
 
 function App() {
@@ -28,7 +27,8 @@ function App() {
     { to: "/projects", label: "Projects" },
     { to: "/skills", label: "Skills" },
     { to: "/contact", label: "Contact" },
-    { to: "/test-playground", label: "Test Playground" },
+    { to: "/best-practices", label: "Best Practices" },
+    { to: "/test-utilities", label: "Test Utilities" },
   ];
   return (
     <>
@@ -99,7 +99,8 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/test-playground" element={<TestPlayground />} />
+        <Route path="/best-practices" element={<QABestPractices />} />
+        <Route path="/test-utilities" element={<QATestUtilities />} />
       </Routes>
       <Toaster />
     </>
