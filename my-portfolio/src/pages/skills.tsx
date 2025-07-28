@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+// Removed unused Card imports for consistency
 
 type SkillGroup = {
   label: string;
@@ -76,20 +76,17 @@ const skillGroups: SkillGroup[] = [
 
 const Skills = () => {
   return (
-    <main className="flex flex-col items-center justify-center min-h-[60vh]">
-      <Card className="w-full max-w-3xl">
-        <CardHeader>
-          <CardTitle className="text-2xl md:text-3xl font-bold">Skills</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-8">
-          <p className="text-muted-foreground text-center">
-            I’m an Automation QA Engineer with a strong track record of designing and implementing scalable, maintainable test frameworks. I specialize in CI/CD pipelines, test automation, and modern QA practices, with deep expertise in Cypress, Playwright, and Jest. I focus on driving quality as a culture; embedding automation, reliability, and best practices into development workflows while mentoring teams and optimizing test strategies for high-performing software delivery.
-          </p>
+    <main className="flex flex-col items-center justify-center min-h-[60vh] text-center">
+      <h1 className="text-2xl md:text-3xl font-bold mb-2">Skills</h1>
+      <p className="text-muted-foreground mb-8">
+        I’m an Automation QA Engineer with a strong track record of designing and implementing scalable, maintainable test frameworks. I specialize in CI/CD pipelines, test automation, and modern QA practices, with deep expertise in Cypress, Playwright, and Jest. I focus on driving quality as a culture; embedding automation, reliability, and best practices into development workflows while mentoring teams and optimizing test strategies for high-performing software delivery.
+      </p>
 
-          {skillGroups.map((group) => (
+      <div className="space-y-8 w-full max-w-3xl mx-auto">
+        {skillGroups.map((group) => (
           <section key={group.label}>
             <h3 className="text-lg font-semibold mb-3">{group.label}</h3>
-            <ul className="flex flex-wrap gap-2">
+            <ul className="flex flex-wrap gap-2 justify-center">
               {group.items.map((skill) => (
                 <li key={skill}>
                   <span className="inline-block rounded-full bg-muted px-3 py-1.5 text-sm font-medium text-foreground border border-border shadow-sm">
@@ -99,9 +96,8 @@ const Skills = () => {
               ))}
             </ul>
           </section>
-          ))}
-        </CardContent>
-      </Card>
+        ))}
+      </div>
     </main>
   );
 };
