@@ -1,0 +1,105 @@
+/* AnimatedBackground.css */
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(120deg, #0f2027 0%, #2c5364 100%);
+  animation: bg-move 20s ease-in-out infinite alternate;
+}
+
+@keyframes bg-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  filter: blur(40px);
+  mix-blend-mode: lighten;
+  pointer-events: none;
+}
+
+.blob1 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #00c3ff 0%, #ffff1c 100%);
+  top: 10%;
+  left: 5%;
+  animation: blob1-move 18s ease-in-out infinite alternate;
+}
+
+@keyframes blob1-move {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(60px, 40px) scale(1.1); }
+}
+
+.blob2 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #ff61a6 0%, #fffb7d 100%);
+  bottom: 10%;
+  right: 10%;
+  animation: blob2-move 22s ease-in-out infinite alternate;
+}
+
+@keyframes blob2-move {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-40px, 60px) scale(1.2); }
+}
+
+.blob3 {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  top: 60%;
+  left: 60%;
+  animation: blob3-move 25s ease-in-out infinite alternate;
+}
+
+@keyframes blob3-move {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, -50px) scale(1.15); }
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  animation: particle-move 12s linear infinite;
+}
+
+.particle:nth-child(odd) {
+  background: rgba(255,255,255,0.25);
+}
+
+.particle:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.particle:nth-child(2) { top: 30%; left: 80%; animation-delay: 1s; }
+.particle:nth-child(3) { top: 60%; left: 50%; animation-delay: 2s; }
+.particle:nth-child(4) { top: 80%; left: 10%; animation-delay: 3s; }
+.particle:nth-child(5) { top: 50%; left: 70%; animation-delay: 4s; }
+.particle:nth-child(6) { top: 20%; left: 60%; animation-delay: 5s; }
+.particle:nth-child(7) { top: 70%; left: 30%; animation-delay: 6s; }
+.particle:nth-child(8) { top: 40%; left: 40%; animation-delay: 7s; }
+.particle:nth-child(9) { top: 90%; left: 90%; animation-delay: 8s; }
+.particle:nth-child(10) { top: 15%; left: 75%; animation-delay: 9s; }
+/* ...repeat for all 30 particles with different positions and delays... */
+
+@keyframes particle-move {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-60px) scale(0.8); opacity: 0.5; }
+}
