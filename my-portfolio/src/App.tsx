@@ -75,7 +75,7 @@ function App() {
                           className={`px-4 py-2 rounded-md transition-colors duration-200 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/70
                             ${location.pathname === link.to
                               ? "bg-accent text-accent-foreground font-bold shadow-sm"
-                              : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}
+                              : "text-gray-300 hover:bg-muted hover:text-foreground"}`}
                         >
                           {link.label}
                         </Link>
@@ -103,7 +103,7 @@ function App() {
                         className={`block px-4 py-2 rounded-md font-medium transition-colors duration-200
                           ${location.pathname === link.to
                             ? "bg-accent text-accent-foreground font-bold shadow-sm"
-                            : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}
+                            : "text-gray-300 hover:bg-muted hover:text-foreground"}`}
                       >
                         {link.label}
                       </Link>

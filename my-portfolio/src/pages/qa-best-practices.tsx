@@ -1,5 +1,4 @@
 import React from "react";
-import { Card, CardHeader, CardDescription, CardContent } from "@/components/ui/card";
 
 const exampleTest = `describe('Login flow', () => {
   it('should allow a user to log in', () => {
@@ -67,53 +66,51 @@ const testDataPractices: string[] = [
 const QABestPractices: React.FC = () => {
   return (
     <main className="flex flex-col gap-8 items-center justify-center min-h-[60vh] p-4">
+      <h1 className="text-2xl md:text-3xl font-bold text-white text-center mb-4">QA Best Practices</h1>
+      
       {/* Cypress Best Practices */}
-      <Card className="w-full max-w-2xl">
-        <CardHeader>
-          Cypress Best Practices
-          <CardDescription>Examples and tips for robust, maintainable tests</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
+      <div className="w-full max-w-2xl bg-black/40 backdrop-blur-md border border-white/20 rounded-lg p-6">
+        <h2 className="text-xl font-bold text-white mb-2">Cypress Best Practices</h2>
+        <p className="text-gray-300 mb-6">Examples and tips for robust, maintainable tests</p>
+        <div className="space-y-6">
           <div>
-            <h2 className="font-semibold mb-2">Example Cypress Test</h2>
-            <pre className="bg-muted rounded p-4 text-sm overflow-x-auto">
+            <h3 className="font-semibold mb-3 text-white">Example Cypress Test</h3>
+            <pre className="bg-black/40 border border-white/20 rounded p-4 text-sm overflow-x-auto text-gray-200">
               <code>{exampleTest}</code>
             </pre>
           </div>
           <div>
-            <h2 className="font-semibold mb-2">Best Practices</h2>
-            <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
+            <h3 className="font-semibold mb-3 text-white">Best Practices</h3>
+            <ul className="list-disc pl-6 space-y-1 text-gray-200">
               {bestPractices.map((tip, i) => (
                 <li key={i}>{tip}</li>
               ))}
             </ul>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
       {/* Test Data Management */}
-      <Card className="w-full max-w-2xl">
-        <CardHeader>
-          Test Data Management
-          <CardDescription>Using randomized and seeded data for stable automated tests</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
+      <div className="w-full max-w-2xl bg-black/40 backdrop-blur-md border border-white/20 rounded-lg p-6">
+        <h2 className="text-xl font-bold text-white mb-2">Test Data Management</h2>
+        <p className="text-gray-300 mb-6">Using randomized and seeded data for stable automated tests</p>
+        <div className="space-y-6">
           <div>
-            <h2 className="font-semibold mb-2">Example Using Faker</h2>
-            <pre className="bg-muted rounded p-4 text-sm overflow-x-auto">
+            <h3 className="font-semibold mb-3 text-white">Example Using Faker</h3>
+            <pre className="bg-black/40 border border-white/20 rounded p-4 text-sm overflow-x-auto text-gray-200">
               <code>{fakerExample}</code>
             </pre>
           </div>
           <div>
-            <h2 className="font-semibold mb-2">Best Practices</h2>
-            <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
+            <h3 className="font-semibold mb-3 text-white">Best Practices</h3>
+            <ul className="list-disc pl-6 space-y-1 text-gray-200">
               {testDataPractices.map((tip, i) => (
                 <li key={i}>{tip}</li>
               ))}
             </ul>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </main>
   );
 };

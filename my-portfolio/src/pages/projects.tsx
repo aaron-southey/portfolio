@@ -1,7 +1,5 @@
 
 
-import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
-
 const projects = [
   {
     title: "This Portfolio!",
@@ -33,23 +31,22 @@ const projects = [
 const Projects = () => {
   return (
     <main className="flex flex-col items-center justify-center min-h-[60vh]">
-      <div className="grid gap-6 w-full max-w-4xl md:grid-cols-2">
+      <h1 className="text-2xl md:text-3xl font-bold mb-8 text-center">Projects</h1>
+      <div className="grid gap-8 w-full max-w-4xl md:grid-cols-2">
         {projects.map((project) => (
-          <Card key={project.title}>
-            <CardHeader>
-              <CardTitle>{project.title}</CardTitle>
-              <CardDescription>{project.description}</CardDescription>
-            </CardHeader>
-            <CardFooter>
+          <div key={project.title} className="bg-black/40 backdrop-blur-md border border-white/20 rounded-lg p-6 hover:bg-black/50 transition-all duration-300">
+            <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+            <p className="text-gray-200 mb-6 leading-relaxed">{project.description}</p>
+            <div className="flex justify-end">
               <button
                 type="button"
-                className="ml-auto px-4 py-2 rounded-md bg-primary text-primary-foreground font-semibold shadow hover:bg-primary/90 transition-colors"
+                className="px-4 py-2 rounded-md bg-primary text-primary-foreground font-semibold shadow hover:bg-primary/90 transition-colors"
                 onClick={() => window.open(project.link, "_blank")}
               >
                 View Project
               </button>
-            </CardFooter>
-          </Card>
+            </div>
+          </div>
         ))}
       </div>
     </main>

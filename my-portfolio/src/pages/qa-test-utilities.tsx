@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import JsonVisualizer from "../components/JsonVisualizer";
 import BreakTheApp from "../components/BreakTheApp";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 
 
@@ -37,14 +36,14 @@ const QATestUtilities: React.FC = () => {
 
   return (
     <main className="flex flex-col gap-8 items-center justify-center min-h-[60vh] p-4">
-      <Card className="w-full max-w-2xl">
-        <CardHeader>
-          <CardTitle>AI Acceptance Criteria Generator</CardTitle>
-          <CardDescription>Paste a user story or feature and generate acceptance criteria using AI.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
+      <h1 className="text-2xl md:text-3xl font-bold text-white text-center mb-4">QA Test Utilities</h1>
+      
+      <div className="w-full max-w-2xl bg-black/40 backdrop-blur-md border border-white/20 rounded-lg p-6">
+        <h2 className="text-xl font-bold text-white mb-2">AI Acceptance Criteria Generator</h2>
+        <p className="text-gray-300 mb-6">Paste a user story or feature and generate acceptance criteria using AI.</p>
+        <div className="space-y-4">
           <textarea
-            className="w-full min-h-[80px] p-2 border rounded resize-y"
+            className="w-full min-h-[80px] p-3 border border-white/30 bg-black/20 text-white placeholder:text-gray-400 rounded resize-y"
             placeholder="Paste your user story or feature description here..."
             value={userStory}
             onChange={e => setUserStory(e.target.value)}
@@ -71,28 +70,20 @@ const QATestUtilities: React.FC = () => {
           {/* {error && (
             <div className="mt-2 text-red-600" role="alert">{error}</div>
           )} */}
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
-      <Card className="w-full max-w-2xl">
-        <CardHeader>
-          <CardTitle>JSON Visualizer</CardTitle>
-          <CardDescription>Convert your JSON to Prettier Format!</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <JsonVisualizer />
-        </CardContent>
-      </Card>
+      <div className="w-full max-w-2xl bg-black/40 backdrop-blur-md border border-white/20 rounded-lg p-6">
+        <h2 className="text-xl font-bold text-white mb-2">JSON Visualizer</h2>
+        <p className="text-gray-300 mb-6">Convert your JSON to Prettier Format!</p>
+        <JsonVisualizer />
+      </div>
 
-      <Card className="w-full max-w-2xl">
-        <CardHeader>
-          <CardTitle>Break the App Challenge</CardTitle>
-          <CardDescription>Try to break the input below! Enter weird, long, or unexpected values and see what happens.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <BreakTheApp />
-        </CardContent>
-      </Card>
+      <div className="w-full max-w-2xl bg-black/40 backdrop-blur-md border border-white/20 rounded-lg p-6">
+        <h2 className="text-xl font-bold text-white mb-2">Break the App Challenge</h2>
+        <p className="text-gray-300 mb-6">Try to break the input below! Enter weird, long, or unexpected values and see what happens.</p>
+        <BreakTheApp />
+      </div>
     </main>
   );
 };

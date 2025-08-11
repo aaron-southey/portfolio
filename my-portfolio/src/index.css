@@ -11,9 +11,7 @@ body {
 }
 
 
-main {
-  @apply max-w-3xl mx-auto bg-white dark:bg-slate-800 rounded-lg shadow p-4 md:p-8 w-full border border-slate-200 dark:border-slate-700;
-}
+/* main element styling removed to allow custom page styling */
 
 h1, h2 {
   @apply font-bold text-cyan-700 dark:text-cyan-400 mb-4;
