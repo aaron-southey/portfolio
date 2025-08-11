@@ -19,9 +19,10 @@ import QABestPractices from './pages/qa-best-practices';
 import QATestUtilities from './pages/qa-test-utilities';
 import { Toaster } from '@/components/ui/toaster';
 
-import AnimatedBackground from './components/AnimatedBackground';
+import Beams from './components/Beams';
 
 import React from 'react';
+import TrueFocus from './components/TrueFocus';
 
 function App() {
   const location = useLocation();
@@ -37,15 +38,31 @@ function App() {
   ];
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh' }}>
-      <AnimatedBackground />
+    <div style={{ position: 'relative', minHeight: '1vh' }}>
+      <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
+        <Beams
+          beamWidth={2}
+          beamHeight={15}
+          beamNumber={12}
+          lightColor="#ffffff"
+          speed={2}
+          noiseIntensity={1.75}
+          scale={0.2}
+          rotation={15}
+        />
+      </div>
       <div className="flex flex-col min-h-screen">
         {/* Header */}
-        <header className="w-full bg-background border-b border-border shadow-sm">
+        <header className="w-full">
           <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
-            <span className="text-xl font-bold tracking-tight text-primary select-none">
-              Aaron Southey | Quality Engineer
-            </span>
+            <TrueFocus 
+              sentence="Aaron_Southey Quality_Engineer"
+              manualMode={false}
+              blurAmount={5}
+              borderColor="red"
+              animationDuration={2}
+              pauseBetweenAnimations={1}
+            />
             {/* Desktop Nav */}
             <nav className="hidden md:block">
               <NavigationMenu>
@@ -98,31 +115,29 @@ function App() {
           </div>
         </header>
         {/* Main content area with animated page transitions */}
-        <main className="flex-1">
-          <div className="container mx-auto px-4 py-8 mb-12">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={location.pathname}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -24 }}
-                transition={{ duration: 0.4, ease: 'easeInOut' }}
-              >
-                <Routes location={location} key={location.pathname}>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/projects" element={<Projects />} />
-                  <Route path="/skills" element={<Skills />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/best-practices" element={<QABestPractices />} />
-                  <Route path="/test-utilities" element={<QATestUtilities />} />
-                </Routes>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+        <main className={`flex-1 ${location.pathname === '/' ? 'bg-transparent shadow-none border-none p-0 max-w-none mx-0 rounded-none' : ''}`}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={location.pathname}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -24 }}
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
+            >
+              <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<div className="container mx-auto px-4 py-8 mb-12"><About /></div>} />
+                <Route path="/projects" element={<div className="container mx-auto px-4 py-8 mb-12"><Projects /></div>} />
+                <Route path="/skills" element={<div className="container mx-auto px-4 py-8 mb-12"><Skills /></div>} />
+                <Route path="/contact" element={<div className="container mx-auto px-4 py-8 mb-12"><Contact /></div>} />
+                <Route path="/best-practices" element={<div className="container mx-auto px-4 py-8 mb-12"><QABestPractices /></div>} />
+                <Route path="/test-utilities" element={<div className="container mx-auto px-4 py-8 mb-12"><QATestUtilities /></div>} />
+              </Routes>
+            </motion.div>
+          </AnimatePresence>
         </main>
         {/* Footer */}
-        <footer className="w-full relative mt-auto z-10">
+        <footer className="w-full relative mt-12 z-10">
           <div className="absolute inset-0 pointer-events-none" style={{
             background: 'linear-gradient(90deg, rgba(30,41,59,0.7) 0%, rgba(30,41,59,0.4) 100%)',
             backdropFilter: 'blur(12px)',
