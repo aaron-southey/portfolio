@@ -89,21 +89,29 @@ function App() {
             <div className="md:hidden">
               <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" aria-label="Open menu">
+                  <Button 
+                    variant="outline" 
+                    size="icon" 
+                    aria-label="Open menu"
+                    className="border-primary/20 bg-background/80 backdrop-blur-sm hover:bg-primary/10 hover:border-primary/40 transition-all duration-200"
+                  >
                     <Menu className="w-6 h-6 text-primary" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="top">
-                  <nav className="flex flex-col gap-2 mt-4">
+                <SheetContent 
+                  side="top" 
+                  className="bg-black/20 backdrop-blur-sm border-b border-white/10 shadow-xl"
+                >
+                  <nav className="flex flex-col gap-3 mt-6">
                     {navLinks.map((link) => (
                       <Link
                         key={link.to}
                         to={link.to}
                         onClick={() => setMobileNavOpen(false)}
-                        className={`block px-4 py-2 rounded-md font-medium transition-colors duration-200
+                        className={`block px-6 py-3 rounded-lg font-medium transition-all duration-200 border
                           ${location.pathname === link.to
-                            ? "bg-accent text-accent-foreground font-bold shadow-sm"
-                            : "text-gray-300 hover:bg-muted hover:text-foreground"}`}
+                            ? "bg-white/10 text-white border-white/20 font-bold shadow-sm"
+                            : "text-gray-300 hover:bg-white/5 hover:text-white border-transparent hover:border-white/10"}`}
                       >
                         {link.label}
                       </Link>
