@@ -36,7 +36,7 @@ const Home: React.FC = () => {
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 2, duration: 1, ease: "backOut" }}
+            transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}
             className="z-10 pointer-events-auto"
           >
           <div className="relative">

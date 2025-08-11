@@ -13,32 +13,74 @@ body {
 
 /* main element styling removed to allow custom page styling */
 
-h1, h2 {
-  @apply font-bold text-cyan-700 dark:text-cyan-400 mb-4;
+/* Enhanced typography for minimalistic design - exclude ProfileCard */
+h1:not(.pc-details h1) {
+  @apply text-2xl md:text-4xl font-light tracking-tight text-white mb-6;
+  letter-spacing: -0.02em;
 }
 
-.card, .read-the-docs {
-  @apply bg-slate-50 dark:bg-slate-900/60 rounded-lg p-4 mt-4 shadow border border-slate-200 dark:border-slate-700;
-  font-weight: 500;
-  color: #0ea5e9;
-  text-decoration: underline;
-  outline: none;
-  transition: color 0.2s;
-}
-a:hover {
-  color: #0369a1;
+h2:not(.pc-details h2) {
+  @apply text-xl md:text-2xl font-light tracking-tight text-gray-200 mb-4;
+  letter-spacing: -0.01em;
 }
 
-button {
-  @apply rounded-lg border border-slate-300 dark:border-slate-700 px-4 py-2 font-medium bg-cyan-600 text-white cursor-pointer transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 shadow-sm;
+h3:not(.pc-details h3) {
+  @apply text-lg md:text-xl font-medium text-gray-300 mb-3;
 }
-button:hover {
-  @apply bg-cyan-700;
+
+/* Ensure ProfileCard elements are completely isolated */
+.pc-details * {
+  margin: 0 !important;
+  padding: 0 !important;
 }
-button:focus,
-button:focus-visible {
-  @apply ring-2 ring-cyan-400;
+
+/* Minimalistic text styles */
+.text-minimal {
+  @apply text-gray-300 text-base font-normal tracking-wide;
+  letter-spacing: 0.03em;
+  opacity: 0.9;
 }
+
+/* Refined button styles */
+.btn-minimal {
+  @apply px-6 py-3 text-sm font-medium tracking-wide border border-white/30 bg-white/5 backdrop-blur-sm text-white rounded-lg hover:bg-white/10 transition-all duration-300 ease-out;
+}
+
+.btn-minimal-filled {
+  @apply px-6 py-3 text-sm font-medium tracking-wide bg-white text-black rounded-lg hover:bg-gray-200 transition-all duration-300 ease-out;
+}
+
+/* Loading states */
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Smooth image loading */
+.image-loading {
+  transition: opacity 0.3s ease;
+}
+
+.image-loaded {
+  opacity: 1;
+}
+
+/* Removed unused legacy styles */
 
 @layer base {
   :root {

@@ -294,36 +294,39 @@
 .pc-details {
   width: 100%;
   position: absolute;
-  top: 3em;
+  top: 2em;
   display: flex;
   flex-direction: column;
 }
 
 .pc-details h3 {
-  font-weight: 600;
-  margin: 0;
-  font-size: min(5svh, 3em);
-  margin: 0;
-  background-image: linear-gradient(to bottom, #fff, #6f6fbe);
-  background-size: 1em 1.5em;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  font-size: min(5svh, 3em) !important;
+  letter-spacing: normal !important;
+  background-image: linear-gradient(to bottom, #fff, #6f6fbe) !important;
+  background-size: 1em 1.5em !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
 }
 
 .pc-details p {
-  font-weight: 600;
-  position: relative;
-  top: -12px;
-  white-space: nowrap;
-  font-size: 16px;
-  margin: 0 auto;
-  width: min-content;
-  background-image: linear-gradient(to bottom, #fff, #4a4ac0);
-  background-size: 1em 1.5em;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
+  font-weight: 600 !important;
+  position: relative !important;
+  top: -12px !important;
+  white-space: nowrap !important;
+  font-size: 16px !important;
+  margin: 0 auto !important;
+  width: min-content !important;
+  letter-spacing: normal !important;
+  background-image: linear-gradient(to bottom, #fff, #4a4ac0) !important;
+  background-size: 1em 1.5em !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
 }
 
 @keyframes glow-bg {
@@ -357,11 +360,11 @@
   }
 
   .pc-details h3 {
-    font-size: min(4svh, 2.5em);
+    font-size: min(4svh, 2.5em) !important;
   }
 
   .pc-details p {
-    font-size: 14px;
+    font-size: 14px !important;
   }
 
   .pc-user-info {
@@ -405,12 +408,12 @@
   }
 
   .pc-details h3 {
-    font-size: min(3.5svh, 2em);
+    font-size: min(3.5svh, 2em) !important;
   }
 
   .pc-details p {
-    font-size: 12px;
-    top: -8px;
+    font-size: 12px !important;
+    top: -8px !important;
   }
 
   .pc-user-info {
@@ -452,11 +455,11 @@
   }
 
   .pc-details h3 {
-    font-size: min(3svh, 1.5em);
+    font-size: min(3svh, 1.5em) !important;
   }
 
   .pc-details p {
-    font-size: 11px;
+    font-size: 11px !important;
   }
 
   .pc-user-info {
